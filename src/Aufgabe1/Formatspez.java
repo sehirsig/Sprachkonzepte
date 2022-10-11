@@ -6,12 +6,14 @@ import java.util.regex.Pattern;
 //    %[argument_index$][flags][width][.precision]conversion
 //    https://developer.android.com/reference/java/util/Formatter
 
+//Format fängt mit % an und hört mit d auf
+
 public class Formatspez {
     static String ARGUMENT_INDEX = ".*?";
-    static String FLAGS = "[-#+ 0,(]*";
-    static String WIDTH = "\\d*";
-    static String PRECISION = "(\\.\\d++)*";
-    static String CONVERSION = "[a-zA-Z%]";
+    static String FLAGS = "[%]*";
+    static String WIDTH = "";
+    static String PRECISION = "";
+    static String CONVERSION = "[dn]";
     static String PATTERN = "(%" + ARGUMENT_INDEX + FLAGS + WIDTH + PRECISION + CONVERSION + ")";
 
     public static void main(String[] args) {
@@ -20,7 +22,7 @@ public class Formatspez {
             System.exit(1);
         }
 
-        String formatString = "%1$-02.3dyyy";//args[0];
+        String formatString = "xxx %d yyy%n";//args[0];
         int subStringStart = 0;
 
         Pattern pattern = Pattern.compile(PATTERN);
