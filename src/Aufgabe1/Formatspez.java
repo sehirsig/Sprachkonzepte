@@ -26,20 +26,21 @@ public class Formatspez {
         %1$-02.3dyyy
         FORMAT("%1$-02.3d")TEXT("yyy")
          */
-        String formatString = "%1$-02.3dyyy";//args[0];
+        String formatString = "Wochentag: %tA Uhrzeit: %tT";//args[0];
 
         //% + ARGUMENT_INDEX + FLAGS + WIDTH + PRECISION + CONVERSION
         // %[argument_index$][flags][width][.precision]conversion
         // '%' + argument_index + flags + width + precision + conversion
 
-        String text = "([a-zA-Z ]*)";
+        String text = "([a-zA-Z: ]*)";
 
         String argument_index = "([1-9]\\d*\\$)*";
         String flags = "[-#\\+ 0,\\(]*";
         String width = "([1-9]\\d*)?";
         String precision = "(\\.\\d*)?";
         String conversion = "[bBhHsScCdoxXeEfgGaAtT%n]";
-        String PATTERN = "(%" + argument_index + flags + width + precision + conversion + ")|" + text;
+        String time = "[AT]?";
+        String PATTERN = "(%" + argument_index + flags + width + precision + conversion + time + ")|" + text;
 
         Pattern pattern = Pattern.compile(PATTERN);
         Matcher matcher = pattern.matcher(formatString);
