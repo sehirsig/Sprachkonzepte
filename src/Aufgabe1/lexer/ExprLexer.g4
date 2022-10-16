@@ -1,4 +1,4 @@
-// ExprLexer.g4
+// AMPM.g4
 lexer grammar ExprLexer;
                     
 Number: Digits ('.' Digits)? ;
