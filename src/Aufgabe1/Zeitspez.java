@@ -30,7 +30,7 @@ public class Zeitspez {
         Matcher matcher = pattern.matcher(formatString);
 
         while (matcher.find()) {
-            System.out.print("Found: " + matcher.group());
+            System.out.print("Found: \"" + matcher.group() + "\"");
         }
     }
 }
