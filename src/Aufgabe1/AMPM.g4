@@ -1,13 +1,14 @@
 // AMPM.g4
 lexer grammar AMPM;
                     
-Number: ([0-1])|('12:00 ' ('noon'|'midnight'));
-
-// (FirstDigit SecondDigit (':' FirstDigit SecondDigit)? (('a.'|'p.')(' ')?'m.'))
+Number: ((Hours)(Seperator)(Minutes)(USformat)) | ('12:00 'Fullformat);
 
 
-fragment FirstDigit: ([0-1]);
-fragment SecondDigit: ([0-9]);
+fragment Hours: ([1][0-2])|([1-9]);
+fragment Minutes: ([0-5][0-9]);
+fragment USformat: ' a.m' | ' p.m' ;
+fragment Fullformat: 'noon'|'midnight';
+fragment Seperator: ':';
 
 PLUS: '+';
 MINUS: '-';

@@ -10,9 +10,14 @@ public class Zeitspez {
             System.err.println("java RegexTest <format-string>");
             System.exit(1);
         }
+        /*
+        TEXT("xxx ")FORMAT("%d")TEXT(" yyy")FORMAT("%n")
+        TEXT("xxx")FORMAT("%1$d")TEXT(" yyy")
+        FORMAT("%1$-02.3d")TEXT("yyy")
+        TEXT("Wochentag:")FORMAT("%tA")TEXT("Uhrzeit:")FORMAT("%tT")
+         */
 
-
-        String formatString = "11:00 a. m.";//args[0];
+        String formatString = "12:00 noon";//args[0];
         /* 12 Hour Clock
 
             12:00 a.m.
@@ -21,8 +26,6 @@ public class Zeitspez {
             12:01 p.m.
 
             (((0[1-9])|(1[1-2])):([0-5][0-9]) ((a. m.)|(p. m.)))|(12:00 (noon|midnight))
-
-
          */
         String PATTERN = "(((0[1-9])|(1[1-2])):([0-5][0-9]) ((a. m.)|(p. m.)))|(12:00 (noon|midnight))";
 
@@ -32,5 +35,7 @@ public class Zeitspez {
         while (matcher.find()) {
             System.out.print("Found: \"" + matcher.group() + "\"");
         }
+        if (!matcher.find())
+            System.out.printf("no match");
     }
 }
