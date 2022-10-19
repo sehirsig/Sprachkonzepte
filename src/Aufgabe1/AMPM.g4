@@ -1,14 +1,16 @@
 // AMPM.g4
-lexer grammar AMPM;
-                    
-Number: ((Hours)(Seperator)(Minutes)(USformat)) | ('12:00 'Fullformat);
+grammar AMPM;
 
 
-fragment Hours: ([1][0-2])|([1-9]);
-fragment Minutes: ([0-5][0-9]);
-fragment USformat: ' a.m' | ' p.m' ;
-fragment Fullformat: 'noon'|'midnight';
-fragment Seperator: ':';
+Hours: ([1][0-2])|([1-9]);
+Minutes: ([0-5][0-9]);
+USformat: ' a.m' | ' p.m' ;
+Fullformat: 'noon'|'midnight';
+Seperator: ':';
+main: (Hours Seperator Minutes USformat) | ('12:00 'Fullformat);
+
+
+
 
 PLUS: '+';
 MINUS: '-';
