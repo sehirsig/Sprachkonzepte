@@ -17,15 +17,6 @@ public class Formatspez {
             System.exit(1);
         }
 
-
-        /*
-        xxx %d yyy%n
-        TEXT("xxx ")FORMAT("%d")TEXT(" yyy")FORMAT("%n")
-        xxx%1$d yyy
-        TEXT("xxx")FORMAT("%1$d")TEXT(" yyy")
-        %1$-02.3dyyy
-        FORMAT("%1$-02.3d")TEXT("yyy")
-         */
         String formatString = "Wochentag: %tA Uhrzeit: %tT";//args[0];
 
         //% + ARGUMENT_INDEX + FLAGS + WIDTH + PRECISION + CONVERSION

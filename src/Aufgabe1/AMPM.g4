@@ -7,7 +7,7 @@ Minutes: ([0-5][0-9]);
 USformat: ' a.m' | ' p.m' ;
 Fullformat: 'noon'|'midnight';
 Seperator: ':';
-main: (Hours Seperator Minutes USformat) | ('12:00 'Fullformat);
+main: (Hours Seperator Minutes USformat) | ('12:00 'Fullformat); // rechtslick test rule main
 
 
 
