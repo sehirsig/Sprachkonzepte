@@ -9,7 +9,7 @@ NUMBERS     :   '[' DIGIT+ ']';
 TEXT        :   [a-zA-Z]    ;
 DIGIT       :   [0-9]       ;
 SEPERATOR   :   '%'         ;
-EOL         :   '€'         ;
+EOL         :   '.'         ;
 
 
 WS: [ \t\r\n]+ -> channel(HIDDEN);

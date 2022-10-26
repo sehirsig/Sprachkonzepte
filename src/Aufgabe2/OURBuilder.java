@@ -9,8 +9,10 @@ import java.util.Stack;
 
 public final class OURBuilder extends OURParserBaseListener {
     private Stack<OUR> stack = new Stack<OUR>();
+    int multcounter = 1;
 
     public OUR build(ParseTree tree) {
+
         new ParseTreeWalker().walk(this, tree);
         return this.stack.pop();
     }
@@ -21,30 +23,40 @@ public final class OURBuilder extends OURParserBaseListener {
         // Sentence -> 2
         // MultSentence -> 3
         if (ctx.getChildCount() == 2) {
+            System.out.println("Stack at Sentence: " + stack.toString());
             OUR right = this.stack.pop();
-            OUR left = this.stack.pop();
-            String op = ctx.getChild(1).getText();
-            this.stack.push(new Sentence(left, op, right));
+            String value = ctx.getChild(0).getText();
+            this.stack.push(new StartSentence(value, right));
         }
     }
 
     @Override
     public void exitMultSentence(OURParser.MultSentenceContext ctx) {
         if (ctx.getChildCount() == 3) {
-            OUR right = this.stack.pop();
-            OUR left = this.stack.pop();
-            String op = ctx.getChild(1).getText();
-            this.stack.push(new Sentence(left, op, right));
+            System.out.println("Stack at MultSentence " + multcounter++ + ": " + stack.toString());
+            if(ctx.getChild(2).getText().length() == 1) {
+                String right = ctx.getChild(2).getText();
+                OUR value = this.stack.pop();
+                String separator = ctx.getChild(0).getText();
+                this.stack.push(new Sentence(separator, value, right));
+            } else {
+                OUR right = this.stack.pop();
+                OUR value = this.stack.pop();
+                String separator = ctx.getChild(0).getText();
+                this.stack.push(new Sentence(separator, value, right));
+            }
+            //SEPERATOR  value  (Multi/EOL)
         }
     }
 
     @Override
     public void exitValue(OURParser.ValueContext ctx) {
-        String s = switch (ctx.getStart().getType()) {
-            case OURLexer.NUMBERS -> ctx.NUMBERS().getText();
-            case OURLexer.STRING -> ctx.STRING().getText();
-            default -> "";
+        String s = "";
+        switch (ctx.getStart().getType()) {
+            case OURLexer.NUMBERS -> s =  ctx.NUMBERS().getText();
+            case OURLexer.STRING -> s = ctx.STRING().getText();
         };
+        System.out.println("Value to add to stack: " + s);
         this.stack.push(new Value(s));
     }
 }

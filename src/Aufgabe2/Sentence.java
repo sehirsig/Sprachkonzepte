@@ -3,23 +3,36 @@ package Aufgabe2;
 
 // Sentence.java
 public final class Sentence extends OUR {
-    public final OUR left;
-    public final String sep;
+    public final String separator;
+    public final OUR value;
     public final OUR right;
+    public final String rightString;
 
-    public Sentence(OUR left, String sep, OUR right) {
-        this.left = left;
-        this.sep = sep;
+    public Sentence(String separator, OUR value, OUR right) {
+        this.separator = separator;
+        this.value = value;
         this.right = right;
+        this .rightString = "";
+    }
+
+    public Sentence(String separator, OUR value, String rightString) {
+        this.separator = separator;
+        this.value = value;
+        this.rightString = rightString;
+        this.right = null;
     }
 
     public String getSentence() {
-        return this.sep;
+        return this.value.toString();
     }
 
     @Override
     public String toString() {
-        return "(" + this.left + this.sep + this.right + ")";
+        if (right == null) {
+            return this.separator + this.value + this.rightString;
+        } else {
+            return this.separator + this.value + this.right;
+        }
     }
 }
 

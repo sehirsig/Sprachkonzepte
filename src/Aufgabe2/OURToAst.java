@@ -8,7 +8,7 @@ public final class OURToAst {
     private OURToAst() { }
 
     public static void main(String[] args) throws Exception {
-        OURLexer lexer = new OURLexer(CharStreams.fromFileName("src/Aufgabe2/input"));
+        OURLexer lexer = new OURLexer(CharStreams.fromStream(System.in));
         OURParser parser = new OURParser(new CommonTokenStream(lexer));
         ParseTree tree = parser.start();
         if (parser.getNumberOfSyntaxErrors() > 0) {
