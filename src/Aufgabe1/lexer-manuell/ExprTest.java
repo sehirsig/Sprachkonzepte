@@ -1,6 +1,6 @@
 // ExprTest.java
 
-
+/*
 import Aufgabe1.lexer.ExprLexer;
 
 public final class ExprTest {
@@ -15,3 +15,4 @@ public final class ExprTest {
     }
 }
 
+*/

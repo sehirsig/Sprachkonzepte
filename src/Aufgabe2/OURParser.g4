@@ -2,9 +2,13 @@ parser grammar OURParser;
 
 options { tokenVocab=OURLexer; }
 
-satz    :   (STRING | NUMBERS) (addsatz)* EOL  ;
+start: sentence EOF ;
 
-addsatz :   (SEPERATOR (STRING | NUMBERS))  ;
+sentence    :   value (multSentence | EOL)  ;
+
+multSentence :   (SEPERATOR value multSentence | SEPERATOR value EOL ) ;
+
+value   :   (STRING | NUMBERS)  ;
 
 // {Test}%[42]%[4332]€  -> RICHTIG
 // [9124]%{324}€       -> FALSCH
