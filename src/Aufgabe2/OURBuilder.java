@@ -6,7 +6,6 @@ import org.antlr.v4.runtime.ParserRuleContext;
 
 import java.util.Stack;
 
-
 public final class OURBuilder extends OURParserBaseListener {
     private Stack<OUR> stack = new Stack<OUR>();
     int multcounter = 1;
