@@ -12,7 +12,8 @@ public final class OURToAst {
         OURParser parser = new OURParser(new CommonTokenStream(lexer));
         ParseTree tree = parser.start();
         if (parser.getNumberOfSyntaxErrors() > 0) {
-            System.err.printf("%d error(s) detected%n", parser.getNumberOfSyntaxErrors());
+            System.err.printf("%d error(s) detected%n",
+                              parser.getNumberOfSyntaxErrors());
             System.exit(1);
         }
 

@@ -15,7 +15,7 @@ public final class OURBuilder extends OURParserBaseListener {
         new ParseTreeWalker().walk(this, tree);
         return this.stack.pop();
     }
-// Override exit methods form OURParserListener.java
+// Override exit methods from OURParserListener.java
 
     @Override
     public void exitSentence(OURParser.SentenceContext ctx) {
