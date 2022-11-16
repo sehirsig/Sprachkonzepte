@@ -1,4 +1,0 @@
-<!-- example.dtd -->
-<!ELEMENT example (greeting)>
-<!ELEMENT greeting (#PCDATA)>
-

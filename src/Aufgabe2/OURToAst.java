@@ -54,7 +54,7 @@ public final class OURToAst {
             }
         }
         return true;
-        // [22]%{hi}%[22]%{hi}%[22]%{hi}%[22]%{hi}%[22].
+        // [22]%{hi}%[12]%{hi}%[22]%{hi}%[22]%{hi}%[22].
         // [22]%[22]%[22].
         // [22]%{hi}%[22]%{hi}%[22]%{hi}%[22]%{hi}%{hi}%{hi}.
         // 0 == gleich -> semantisch falsch
@@ -67,7 +67,6 @@ public final class OURToAst {
         for (String s : list) {
             int checksum = 0;
             if (!s.startsWith("[")) continue;
-            System.out.println("curr curr = " + s);
             if (s.contains(".")) {
                 curr = s.substring(1, s.length() - 2);
             } else {
@@ -83,7 +82,6 @@ public final class OURToAst {
                 return false;
             }
             tree = tree.replaceFirst(curr, Integer.toString(checksum));
-            System.out.println("Ast mit Quersummen: " + tree);
         } return true;
     }
 
