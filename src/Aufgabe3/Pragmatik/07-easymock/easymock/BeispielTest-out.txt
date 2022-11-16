@@ -1,0 +1,24 @@
+# Test mit zwei Aufrufen mock.methode()
+true
+true
+
+# Test mit einem Aufruf mock.methode()
+true
+Exception in thread "main" java.lang.AssertionError: 
+  Expectation failure on verify:
+    Beispiel.methode(): expected: 2, actual: 1
+	at org.easymock.internal.MocksControl.verify(MocksControl.java:262)
+	at org.easymock.EasyMock.verify(EasyMock.java:2054)
+	at BeispielTest.main(BeispielTest.java:25)
+
+# Test mit drei Aufrufen mock.methode()
+true
+true
+Exception in thread "main" java.lang.AssertionError: 
+  Unexpected method call Beispiel.methode():
+    Beispiel.methode(): expected: 2, actual: 3
+	at org.easymock.internal.MockInvocationHandler.invoke(MockInvocationHandler.java:44)
+	at org.easymock.internal.ObjectMethodsFilter.invoke(ObjectMethodsFilter.java:102)
+	at com.sun.proxy.$Proxy0.methode(Unknown Source)
+	at BeispielTest.main(BeispielTest.java:23)
+

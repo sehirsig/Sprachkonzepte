@@ -8,13 +8,15 @@ public final class Sentence extends OUR {
     public final OUR right;
     public final String rightString;
 
+    // multisentence next
     public Sentence(String separator, OUR value, OUR right) {
         this.separator = separator;
         this.value = value;
         this.right = right;
-        this .rightString = "";
+        this.rightString = "";
     }
 
+    // last multisentemnce eol
     public Sentence(String separator, OUR value, String rightString) {
         this.separator = separator;
         this.value = value;
@@ -23,6 +25,7 @@ public final class Sentence extends OUR {
     }
 
     public String getSentence() {
+        System.out.printf("here sentence");
         return this.value.toString();
     }
 

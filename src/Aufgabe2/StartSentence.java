@@ -1,5 +1,7 @@
 package Aufgabe2;
+import java.lang.Math;
 
+import static java.lang.System.exit;
 
 // Sentence.java
 public final class StartSentence extends OUR {
@@ -11,7 +13,13 @@ public final class StartSentence extends OUR {
         this.right = right;
     }
 
+    /**
     public String getStartSentence() {
+        return this.value;
+    }
+    */
+
+    public String getStartSentence()  {
         return this.value;
     }
 
