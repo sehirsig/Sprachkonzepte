@@ -1,0 +1,22 @@
+// EasyMock-Ausschnitte:
+
+public class EasyMock {
+    ...
+
+    public static <T> T createMock(java.lang.Class<T> toMock) { ... }
+
+    public static <T> IExpectationSetters<T> expect(T value) { ... }
+
+    ...
+}
+
+public interface IExpectationSetters<T> {
+    ...
+
+    IExpectationSetters<T> andReturn(T value);
+
+    IExpectationSetters<T> times(int count);
+
+    ...
+}
+

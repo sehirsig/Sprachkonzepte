@@ -29,6 +29,9 @@ public final class StartSentence extends OUR {
 
         Sentence curr = (Sentence) this.right;
         Sentence next = (Sentence) curr.right;
+        System.out.println("Curr: " + curr);
+        System.out.println("Next: " + next);
+
         int curr_bin = 5;
         int next_bin = 5;
 
