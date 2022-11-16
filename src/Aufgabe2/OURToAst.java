@@ -20,8 +20,9 @@ public final class OURToAst {
         }
 
         OUR ast = new OURBuilder().build(tree);
-        if (!testStaticSemantic(ast.toString())) exit(1);
+        if (!(testStaticSemantic(ast.toString()) && testDynamicSemantic(ast.toString()))) exit(1);
 
+        System.out.println(testDynamicSemantic(ast.toString()));
         System.out.printf("OURtoString() = \"%s\"%n", ast);
     }
 
@@ -32,7 +33,7 @@ public final class OURToAst {
             if ((c == '{' || c == '[') && (current != c)) {
                 current = c;
             } else if (c == '{' || c == '[') {
-                System.out.printf("Statisch semantischer Fehler: Es dürfen nicht zwei %c aufeinander folgen !\n", current);
+                System.out.printf("Statisch-semantischer Fehler: Es dürfen nicht zwei %c aufeinander folgen !\n", current);
                 return false;
             }
         }
@@ -40,8 +41,42 @@ public final class OURToAst {
         // [22]%{hi}%[22]%{hi}%[22]%{hi}%[22]%{hi}%[22].
         // [22]%[22]%[22].
         // [22]%{hi}%[22]%{hi}%[22]%{hi}%[22]%{hi}%{hi}%{hi}.
+        // [21]%{hi}%[232]%{hi}%[42]%{hi}%[252]%{hi}.
         // 0 == gleich -> semantisch falsch
         // 1 == ungleich -> semantisch richtig
     }
+
+    static public boolean testDynamicSemantic(String tree) {
+
+        String[] list = tree.split("%");
+        String curr = "";
+        for (String s : list) {
+            int checksum = 0;
+            if (!s.startsWith("[")) continue;
+            System.out.println("curr curr = " + s);
+            curr = s.substring(1, s.length() - 1);
+            String[] currar = curr.split("");
+            for (int j = 0; j < curr.length(); j++) {
+                checksum += Integer.parseInt(currar[j]);
+            }
+
+            if (checksum < 4) {
+                System.out.println("Dynamisch-semantischer Fehler: Keine Quersumme darf kleiner als 4 sein !\n");
+                return false;
+            }
+            tree = tree.replaceFirst(curr, Integer.toString(checksum));
+            System.out.println("Ast mit Quersummen: " + tree);
+        } return true;
+
+
+
+
+            // [22]%{hi}%[22]%{hi}%[22]%{hi}%[22]%{hi}%[22].
+        // [22]%[22]%[22].
+        // [22]%{hi}%[22]%{hi}%[22]%{hi}%[22]%{hi}%{hi}%{hi}.
+        // 0 == gleich -> semantisch falsch
+        // 1 == ungleich -> semantisch richtig
+    }
+
 
 }
