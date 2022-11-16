@@ -18,6 +18,29 @@ public final class OURToAst {
         }
 
         OUR ast = new OURBuilder().build(tree);
-        System.out.printf("OURtoString() = \"%s\"%n", ast);
+        if (testStaticSemantik(ast.toString())) {
+            System.out.printf("OURtoString() = \"%s\"%n", ast);
+        } else {
+            System.exit(1);
+        }
+    }
+
+    public static boolean testStaticSemantik(String tree) {
+        char[] ourString = tree.toCharArray();
+        char current = ' ';
+        for (int i = 0; i < ourString.length; i++) {
+            if ((ourString[i] == '{' || ourString[i] == '[') && (current != ourString[i])) {
+                current = ourString[i];
+            } else if ((ourString[i] == '{' || ourString[i] == '[') && (current == ourString[i])) {
+                System.out.printf("Statisch semantischer Fehler: Es dürfen nicht zwei %c aufeinander folgen !\n", current);
+                return false;
+            }
+        }
+        return true;
+        // [22]%{hi}%[22]%{hi}%[22]%{hi}%[22]%{hi}%[22].
+        // [22]%[22]%[22].
+        // [22]%{hi}%[22]%{hi}%[22]%{hi}%[22]%{hi}%{hi}%{hi}.
+        // 0 == gleich -> semantisch falsch
+        // 1 == ungleich -> semantisch richtig
     }
 }
