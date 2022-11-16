@@ -1,4 +1,5 @@
 // WertKlasse.java /* TODO: anderer Klassenname */
+/*
 package klassenvorlagen; /* TODO: anderer Paketname */
 
 /* TODO: bei Bedarf import-Deklarationen ... */
@@ -29,99 +30,99 @@ package klassenvorlagen; /* TODO: anderer Paketname */
  * implementieren, wenn die String-Darstellung der Wertobjekte nicht durch
  * Formatierung (z.B. in <code>printf</code>) k&uuml;rzbar sein soll.</p>
  */
-public final class WertKlasse
-implements Comparable<WertKlasse>, java.util.Formattable {
 
-    /* TODO: gekapselte konstante Instanzvariablen ... */
-    private final TYP NAME;
-
-    /* TODO: Fabrikmethoden ... */
-    /**
-     * Gegenst&uuml;ck zu <code>toString()</code>.
-     * @param s Stringdarstellung eines Wertobjekts
-     * @return Referenz auf zugeh&ouml;riges Wertobjekt
-     */
-    public static WertKlasse valueOf(String s) {
-        /* TODO: Referenz auf konsistentes Objekt zurueckgeben oder
-                 bei ungueltigem String *IllegalArgumentException* werfen */
-    }
-
-    /**
-     * liefert gem&auml;&szlig; der Parameterliste initialisiertes Wertobjekt.
-     * @return Referenz auf Wertobjekt
-     */
-    public static WertKlasse valueOf(/* Parameterliste */) {
-        /* TODO: Referenz auf konsistentes Objekt zurueckgeben oder
-                 bei ungueltigen Argumenten *IllegalArgumentException* werfen */
-    }
-
-    /* TODO: gegebenenfalls Standardwerte ... */
-    /**
-     * &Uuml;bliche Standardwerte sind neutrale Elemente, Minimum, Maximum.
-     */
-    public static final WertKlasse STANDARDWERT
-        = new WertKlasse(/* Argumente */);
-
-
-    /* TODO: private Konstruktoren ... */
-    /**
-     * initialisiert neues Wertobjekt mit den Argumenten der Parameterliste.
-     */
-    private WertKlasse(/* Parameterliste */) {
-        /* TODO: Instanzvariablen initialisieren */
-    }
-
-    /* TODO: Methoden aus java.lang.Object ueberschreiben ... */
-    @Override
-    public boolean equals(Object o) {
-        if (o instanceof WertKlasse) {
-            WertKlasse that = (WertKlasse) o;
-            /* TODO: return true, wenn die Objekte this und that gleich sind */
-        }
-        return false;
-    }
-
-    @Override
-    public int hashCode() {
-        /* TODO: aus den Werten der Instanzvariablen einen Hashcode berechnen */
-    }
-
-    @Override
-    public String toString() {
-        /* TODO: aus den Werten der Instanzvariablen einen String erzeugen,
-                 Gegenstueck zu valueOf(String) */
-    }
-
-    /* TODO: gegebenenfalls Comparable<WertKlasse> implementieren ... */
-    @Override
-    public int compareTo(WertKlasse that) {
-        /* TODO: this und that vergleichen ... */
-    }
-
-    /* TODO: gegebenenfalls java.util.Formattable implementieren ... */
-    @Override
-    public void formatTo(java.util.Formatter f,
-                         int flags, int width, int precision) {
-        /* TODO: formatierte String-Darstellung bauen ... */
-    }
-
-    /* TODO: Operationen ... */
-    /**
-     * verkn&uuml;pft ein Wertobjekt mit den Argumenten der Parameterliste
-     * zu einem neuen Wertobjekt.
-     * @return Referenz auf das berechnete Wertobjekt
-     */
-    public WertKlasse OPERATION(/* Parameterliste */) {
-        /* aus this und den Argumenten neues Wertobjekt berechnen ... */
-    }
-
-    /* TODO: bei Bedarf Getter ... */
-    /**
-     * liefert Bestandteile eines Wertobjekts.
-     * @return z.B. Wert einer Instanzvariablen
-     */
-    public TYP getNAME() {
-        return this.NAME;
-    }
-}
-
+//public final class WertKlasse
+//implements Comparable<WertKlasse>, java.util.Formattable {
+//
+//    /* TODO: gekapselte konstante Instanzvariablen ... */
+//    private final TYP NAME;
+//
+//    /* TODO: Fabrikmethoden ... */
+//    /**
+//     * Gegenst&uuml;ck zu <code>toString()</code>.
+//     * @param s Stringdarstellung eines Wertobjekts
+//     * @return Referenz auf zugeh&ouml;riges Wertobjekt
+//     */
+//    public static WertKlasse valueOf(String s) {
+//        /* TODO: Referenz auf konsistentes Objekt zurueckgeben oder
+//                 bei ungueltigem String *IllegalArgumentException* werfen */
+//    }
+//
+//    /**
+//     * liefert gem&auml;&szlig; der Parameterliste initialisiertes Wertobjekt.
+//     * @return Referenz auf Wertobjekt
+//     */
+//    public static WertKlasse valueOf(/* Parameterliste */) {
+//        /* TODO: Referenz auf konsistentes Objekt zurueckgeben oder
+//                 bei ungueltigen Argumenten *IllegalArgumentException* werfen */
+//    }
+//
+//    /* TODO: gegebenenfalls Standardwerte ... */
+//    /**
+//     * &Uuml;bliche Standardwerte sind neutrale Elemente, Minimum, Maximum.
+//     */
+//    public static final WertKlasse STANDARDWERT
+//        = new WertKlasse(/* Argumente */);
+//
+//
+//    /* TODO: private Konstruktoren ... */
+//    /**
+//     * initialisiert neues Wertobjekt mit den Argumenten der Parameterliste.
+//     */
+//    private WertKlasse(/* Parameterliste */) {
+//        /* TODO: Instanzvariablen initialisieren */
+//    }
+//
+//    /* TODO: Methoden aus java.lang.Object ueberschreiben ... */
+//    @Override
+//    public boolean equals(Object o) {
+//        if (o instanceof WertKlasse) {
+//            WertKlasse that = (WertKlasse) o;
+//            /* TODO: return true, wenn die Objekte this und that gleich sind */
+//        }
+//        return false;
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        /* TODO: aus den Werten der Instanzvariablen einen Hashcode berechnen */
+//    }
+//
+//    @Override
+//    public String toString() {
+//        /* TODO: aus den Werten der Instanzvariablen einen String erzeugen,
+//                 Gegenstueck zu valueOf(String) */
+//    }
+//
+//    /* TODO: gegebenenfalls Comparable<WertKlasse> implementieren ... */
+//    @Override
+//    public int compareTo(WertKlasse that) {
+//        /* TODO: this und that vergleichen ... */
+//    }
+//
+//    /* TODO: gegebenenfalls java.util.Formattable implementieren ... */
+//    @Override
+//    public void formatTo(java.util.Formatter f,
+//                         int flags, int width, int precision) {
+//        /* TODO: formatierte String-Darstellung bauen ... */
+//    }
+//
+//    /* TODO: Operationen ... */
+//    /**
+//     * verkn&uuml;pft ein Wertobjekt mit den Argumenten der Parameterliste
+//     * zu einem neuen Wertobjekt.
+//     * @return Referenz auf das berechnete Wertobjekt
+//     */
+//    public WertKlasse OPERATION(/* Parameterliste */) {
+//        /* aus this und den Argumenten neues Wertobjekt berechnen ... */
+//    }
+//
+//    /* TODO: bei Bedarf Getter ... */
+//    /**
+//     * liefert Bestandteile eines Wertobjekts.
+//     * @return z.B. Wert einer Instanzvariablen
+//     */
+//    public TYP getNAME() {
+//        return this.NAME;
+//    }
+//}

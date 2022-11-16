@@ -1,4 +1,5 @@
 // ExprToValue.java
+/*
 import grammar.ExprLexer;
 import grammar.ExprParser;
 import ast.Expr;
@@ -33,4 +34,4 @@ public final class ExprToValue {
             + " = " + new ExprInterpreter(ast).interpret());
     }
 }
-
+*/

@@ -1,5 +1,5 @@
 // BeispielTest.java
-
+/*
 import static org.easymock.EasyMock.*;
 
 public final class BeispielTest {
@@ -26,3 +26,4 @@ public final class BeispielTest {
     }
 }
 
+*/
