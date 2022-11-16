@@ -8,7 +8,7 @@ public final class Sentence extends OUR {
     public final OUR right;
     public final String rightString;
 
-    // multsentence nexxt
+    // multisentence next
     public Sentence(String separator, OUR value, OUR right) {
         this.separator = separator;
         this.value = value;
@@ -16,7 +16,7 @@ public final class Sentence extends OUR {
         this.rightString = "";
     }
 
-    // last multensentemnce eol
+    // last multisentemnce eol
     public Sentence(String separator, OUR value, String rightString) {
         this.separator = separator;
         this.value = value;
