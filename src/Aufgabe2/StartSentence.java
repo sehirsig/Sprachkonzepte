@@ -23,14 +23,14 @@ public final class StartSentence extends OUR {
     // string = 1
     // wedernoch = throw semantik error
     public String getStartSentence()  {
-        System.out.printf("here startsentence\n");
+        //System.out.printf("here startsentence\n");
         if (this.right == null)
             return this.value;
 
         Sentence curr = (Sentence) this.right;
         Sentence next = (Sentence) curr.right;
-        System.out.println("Curr: " + curr);
-        System.out.println("Next: " + next);
+        //System.out.println("Curr: " + curr);
+        //System.out.println("Next: " + next);
 
         int curr_bin = 5;
         int next_bin = 5;
@@ -46,7 +46,7 @@ public final class StartSentence extends OUR {
 
         // here if [22]%[22].
         if (next == null) {
-            System.out.printf("here null");
+            //System.out.printf("here null");
             return this.value;
         }
 
@@ -81,7 +81,7 @@ public final class StartSentence extends OUR {
 
     @Override
     public String toString() {
-        getStartSentence();
+        //getStartSentence();
         return this.value + this.right;
     }
 }

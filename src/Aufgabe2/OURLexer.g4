@@ -1,7 +1,7 @@
-// Lexer Grammar = Vokabeln
+// Lexer  = Vokabeln
 lexer grammar OURLexer;
 
-//{hallo}%[123]%{bye%}€
+//{hallo}%[123]%{bye%}.
 STRING      :   '{' TEXT+ '}' ;
 NUMBERS     :   '[' DIGIT+ ']';
 

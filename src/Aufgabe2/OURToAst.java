@@ -26,6 +26,8 @@ public final class OURToAst {
         System.out.printf("OURtoString() = \"%s\"%n", ast);
     }
 
+    // wäre auch in grammatik möglich -> besser wäre zbb werteberiech für nubers festlegen, da das nur statisch semantisch
+    // geprüft werden kann
     static public boolean testStaticSemantic(String tree) {
         char[] ourString = tree.toCharArray();
         char current = ' ';
@@ -46,32 +48,44 @@ public final class OURToAst {
         // 1 == ungleich -> semantisch richtig
     }
 
+    // auch statische sematik
+    // dynamisch wäre anzahl numbers print strings into txt file, weil so haben die zahlen eine beudeutung
     static public boolean testDynamicSemantic(String tree) {
-
+        tree = tree.substring(0, tree.length()-1 );
         String[] list = tree.split("%");
-        String curr = "";
-        for (String s : list) {
-            int checksum = 0;
-            if (!s.startsWith("[")) continue;
-            System.out.println("curr curr = " + s);
-            curr = s.substring(1, s.length() - 1);
-            String[] currar = curr.split("");
-            for (int j = 0; j < curr.length(); j++) {
-                checksum += Integer.parseInt(currar[j]);
-            }
+        String first = "";
+        String second = "";
 
-            if (checksum < 4) {
-                System.out.println("Dynamisch-semantischer Fehler: Keine Quersumme darf kleiner als 4 sein !\n");
-                return false;
+        if (!((list.length % 2 ) == 0)) {
+            System.out.println("Dynamisch-semantischer Fehler: Satz anzahl muss gerade sein !\n");
+            return false;
+        }
+
+        // [5]%{gina}%[6]. --> FALSCH da ungerade
+        // [5]%{gina}%[6]%{gravestone}%[3]%{spatz}.
+        // {toter}%[6]%{spatz}%[2]%{kriegt}%[1]%{gravestone}%[4].
+
+        for (int i  = 0; i < list.length ; i+=2 ) {
+            first = list[i].substring(1, list[i].length() - 1);
+            second = list[i+1].substring(1, list[i+1].length() - 1);
+            System.out.println();
+            if (list[i].startsWith("[")) {
+                int curr_nbr = Integer.parseInt(first);
+                for (int j = 0; j < curr_nbr; j++) {
+                    System.out.print(second + ", ");
+                }
+            } else {
+                int curr_nbr = Integer.parseInt(second);
+                for (int j = 0; j < curr_nbr; j++) {
+                    System.out.print(first + ", ");
+                }
+
             }
-            tree = tree.replaceFirst(curr, Integer.toString(checksum));
-            System.out.println("Ast mit Quersummen: " + tree);
+            System.out.println();
         } return true;
 
 
-
-
-            // [22]%{hi}%[22]%{hi}%[22]%{hi}%[22]%{hi}%[22].
+        // [22]%{hi}%[22]%{hi}%[22]%{hi}%[22]%{hi}%[22].
         // [22]%[22]%[22].
         // [22]%{hi}%[22]%{hi}%[22]%{hi}%[22]%{hi}%{hi}%{hi}.
         // 0 == gleich -> semantisch falsch

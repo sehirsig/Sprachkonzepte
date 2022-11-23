@@ -25,7 +25,7 @@ public final class Sentence extends OUR {
     }
 
     public String getSentence() {
-        System.out.printf("here sentence");
+        //System.out.printf("here sentence");
         return this.value.toString();
     }
 

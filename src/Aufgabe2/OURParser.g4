@@ -1,3 +1,4 @@
+// Parser = Grammatik
 parser grammar OURParser;
 
 options { tokenVocab=OURLexer; }
@@ -16,6 +17,6 @@ value   :   (STRING | NUMBERS);
 // [9124]%{324}.                -> FALSCH
 // {BRAND}%[050]%[233]%{Brot}.  -> RICHTIG
 
-// Statische semantik: value abwechselnd string, number
+// Statische semantik: value abwechselnd string, number -> besser numbers wertebereich festlegen
 // {BRAND}%[050]%[233]%{Brot}.  -> FALSCH
-// {BRAND}%[050]%{Brot}%[233].  -> Richtig
+// {BRAND}%[050]%{Brot}%[233].  -> RICHTIG
