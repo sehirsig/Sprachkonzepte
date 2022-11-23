@@ -26,6 +26,8 @@ public final class OURToAst {
         System.out.printf("OURtoString() = \"%s\"%n", ast);
     }
 
+
+
     // wäre auch in grammatik möglich -> besser wäre zbb werteberiech für nubers festlegen, da das nur statisch semantisch
     // geprüft werden kann
     static public boolean testStaticSemantic(String tree) {
