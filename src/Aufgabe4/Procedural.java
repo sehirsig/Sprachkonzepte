@@ -7,6 +7,9 @@ import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 
+
+
+
 public final class Procedural {
     private Procedural() { }
 
@@ -29,15 +32,32 @@ public final class Procedural {
     }
 
     private static int totalLineLengths(LinkedList<String> lines) {
-
-        lines.forEach(s -> lines.get(totalLineLengths(lines)));
-        return 0;
+        int size = 0;
+        for (var line : lines) {
+            size += line.length();
+        }
+        return size;
     }
 
     private static void removeShortLines(LinkedList<String> lines) {
+        // lines.removeIf(line -> line.length() < MIN_LENGTH);
+        LinkedList<String> tempLines = (LinkedList<String>) lines.clone();
+        for (var line : tempLines) {
+            if (line.length() < MIN_LENGTH) {
+                lines.remove(line);
+            }
+        }
     }
 
     private static void removeEmptyLines(LinkedList<String> lines) {
+        // var macht den typ automatisch
+        //  lines.removeIf(String::isEmpty);
+        LinkedList<String> tempLines = (LinkedList<String>) lines.clone();
+        for (var line : tempLines) {
+           if (line.isEmpty()) {
+                lines.remove(line);
+           }
+        }
     }
 
     private static void readLines(BufferedReader input, List<String> lines) throws IOException {
