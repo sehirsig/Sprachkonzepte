@@ -47,6 +47,16 @@ public final class Procedural {
         }
     }
 
+    // result = 187 (536 microsec) | PROCEDURAL
+    /*
+        Was an dem Java-Programm ist eindeutig prozeduraler Stil?
+        A:
+        -   Die Schleifen (For) sind eindeutig prozedural, da schrittweise die Liste durchgegangen wird und via
+        aufgerufene Funktion die selbe Veränderung durchgeführt wird.
+        -   While Schleife bei input.readline()
+
+     */
+
     // TODO: Klassenmethoden readLines, removeEmptyLines, removeShortLines, totalLineLengths
 }
 
