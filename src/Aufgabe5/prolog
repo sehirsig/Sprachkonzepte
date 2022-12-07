@@ -2,9 +2,11 @@ Aufgabe 5 a)
 
 25.)
 
-26.)
+26.) Definieren Sie die Berechnung der Fakultät in Prolog.
 
-28.)
+28.) Was berechnen folgende Anfragen?
+– append(X, Y, [1,2,3,4]).
+– append(X, [1,2,3,4], Y).
 
 
 Aufgabe 5 b)
