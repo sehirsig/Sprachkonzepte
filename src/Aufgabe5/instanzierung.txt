@@ -1,0 +1,10 @@
+[X,Y,Z] = [john,likes,fish]        -> X = john, Y = likes, Z = fish
+[cat] = [X|Y]                      -> X = cat, Y -> []
+[X,Y|Z] = [mary,likes,wine]        -> X = mary, Y = likes, Z = [wine]
+[X,Y|Z] = [mary,likes,wine, p]     -> X = mary, Y = likes, Z = [wine, p]
+// head imme nur ein element, hier als head x, y also 2 heads vergeben
+// tail immer eine Liste
+[[the,Y]|Z] = [[X,hare],[is,here]] -> X = the, Y = hare Z = [[is, here]]
+[golden|T] = [golden,norfolk]      -> T = [norfolk]   // golden wird nichts gesetzt
+[white,horse] = [horse,X]          -> false  // da white =! horse
+[white|Q] = [P,horse]              -> P = white, Q = [horse]
