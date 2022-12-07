@@ -8,3 +8,29 @@
 [golden|T] = [golden,norfolk]      -> T = [norfolk]   // golden wird nichts gesetzt
 [white,horse] = [horse,X]          -> false  // da white =! horse
 [white|Q] = [P,horse]              -> P = white, Q = [horse]
+
+
+
+?- append(X,Y,[a, b, c, d]).
+X = [], Y = [a, b, c, d] ;   <--- maybe more solutions?
+X = [a],   Y = [b, c, c] ;   <--- yes... maybe more solutions?
+X = [a, b],   Y = [c, d] ;   <--- yes... maybe more solutions?
+X = [a, b, c],   Y = [d] ;   <--- yes... maybe more solutions?
+X = [a, b, c, d], Y = [] ;   <--- yes... maybe more solutions?
+false.                       <--- actually not
+
+?- append(X, [1,2,3,4], Y).
+X = [] Y = [1,2,3,4]
+-> X, Y geht gegen unendlich bis zum Bufferoverflow
+
+
+
+
+
+
+append(X, Y, [1,2,3,4]). ->
+append(X, [1,2,3,4], Y).
+
+3!
+1 , 2 , 3
+3x2x1
