@@ -13,7 +13,10 @@ Aufgabe 5 a)
 
 
 26.)
-
+factorial(0, 1).
+factorial(Z, X) :- Z1 is Z-1, factorial(Z1, Z, X).
+factorial(0, X, X).
+factorial(Z, E, X) :- E1 is E*Z, Z1 is Z-1, factorial(Z1, E1, X).
 
 28.)
 ?- append(X, [1,2,3,4], Y).
