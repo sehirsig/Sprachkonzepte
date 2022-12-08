@@ -34,8 +34,38 @@ false.                       <--- actually not
 
 
 Aufgabe 5 b)
+sum(L, X) :- sum(L, 0, X).
+sum([],X, X).
+sum([H|T],E,X) :- E1 is E+H, sum(T,E1,X).
 
 
+verbindung(START, AB, ZIEL, PLAN) :- verbindung(START, AB, ZIEL, AN)
+verbindung() // abbruch wenn ziel erreicht
+verbindung(START, AB, ZIEL, PlAN) :- ZW is AB > AN verbindung(ZW, AB, ZIEL, AN)
 
+verbindung(START, AB, ZIEL, PLAN) :-  is , AB is [H/T1] , ZIEL [H/T2], AN is T2
+verbindung(START, AB, ZIEL, PlAN) :- AB > AN verbindung(ZW, AB, ZIEL, AN)
 
 Aufgabe 5 c)
+
+zug(konstanz, 08.39, offenburg, 10.59).
+zug(konstanz, 08.39, karlsruhe, 11.49).
+zug(konstanz, 08.53, singen, 09.26).
+zug(singen, 09.37, stuttgart, 11.32).
+zug(offenburg, 11.29, mannheim, 12.24).
+zug(karlsruhe, 12.06, mainz, 13.47).
+zug(stuttgart, 11.51, mannheim, 12.28).
+zug(mannheim, 12.39, mainz, 13.18).
+
+verbindung(Start_Stadt, Abfahrts_Zeit, End_Ziel, Reise_Plan) :-
+    zug(Start_Stadt, Neue_Abfahrt, End_Ziel, Neue_A_Zeit),
+    Neue_Abfahrt > Abfahrts_Zeit,
+    Reise_Plan = [[Start_Stadt, Neue_Abfahrt, End_Ziel, Neue_A_Zeit]].
+
+verbindung(Start_Stadt, Abfahrts_Zeit, End_Ziel, Reise_Plan) :-
+    zug(Start_Stadt, Neue_Abfahrt, Neues_Ziel, Neue_A_Zeit),
+    Neue_Abfahrt > Abfahrts_Zeit,
+    Reise_Plan = [[Start_Stadt, Neue_Abfahrt, Neues_Ziel, Neue_A_Zeit] | Rest],
+    verbindung(Neues_Ziel, Neue_A_Zeit, End_Ziel, Rest).
+
+
