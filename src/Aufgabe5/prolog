@@ -38,6 +38,12 @@ sum(L, X) :- sum(L, 0, X).
 sum([],X, X).
 sum([H|T],E,X) :- E1 is E+H, sum(T,E1,X).
 
+ODER
+sum([], 0).
+sum([H|X1], S1) :- sum(X1,S), S1 is S+H.
+
+sum([1,2,3,4],X)
+
 
 verbindung(START, AB, ZIEL, PLAN) :- verbindung(START, AB, ZIEL, AN)
 verbindung() // abbruch wenn ziel erreicht
