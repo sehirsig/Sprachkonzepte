@@ -17,14 +17,19 @@ public final class Functional {
 
     public static void main(String[] args) throws IOException {
         var input = Files.newBufferedReader(Paths.get(args[0]));
-        var lines = new LinkedList<String>();
 
         long start = System.nanoTime();
-
+/*
         LinkedList<String> l1 = readLines(input, lines);
         LinkedList<String> l2 = removeEmptyLines(l1);
         LinkedList<String> l3 = removeShortLines(l2);
+
         int n = totalLineLengths(l3);
+*/
+        int n = input.lines()
+                .filter(line -> !line.isEmpty())
+                .filter(line -> line.length() > MIN_LENGTH)
+                .mapToInt(String::length).sum();
 
         long stop = System.nanoTime();
 
