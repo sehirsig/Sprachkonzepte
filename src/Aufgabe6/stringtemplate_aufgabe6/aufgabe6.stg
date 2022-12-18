@@ -11,8 +11,9 @@ td { font-family: monospace }
 </style>
 </head>
 <body>
-<h1>AUFGABE7 SPRACHKONZEPTE</h1>
-$n:javaApis(); separator="\n"$
+<h1>Sprachkonzepte, Aufgabe 7</h1>
+$n:javaApis(); separator="\n<br>\n"$
+<br>
 </body>
 </html>
 >>
