@@ -1,0 +1,12 @@
+NOTENSPIEGEL:
+Mathematik 2        	L	2,3
+Mathematik 2        	S	bestanden
+Stochastik          	L	1,7
+Programmiertechnik 2	L	2,7
+Systemprogrammierung	L	3,0
+Systemprogrammierung	S	bestanden
+Rechnerarchitekturen	L	4,0
+Rechnerarchitekturen	S	nicht bestanden
+Rechnerarchitekturen	L	Fehler: 11
+Rechnerarchitekturen	S	Fehler: X
+Fehler: NN
