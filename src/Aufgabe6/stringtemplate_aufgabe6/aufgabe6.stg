@@ -14,7 +14,7 @@ $n:javaApis(); separator="\n"$
 javaApis(f) ::= <<
 <h2>$f.className$</h2>
 <table>
-$if(f.isClass)$f:tableClass()$else$f:tableInterface()$endif$
+$if(f.isClass)$$f:tableClass()$$else$$f:tableInterface()$$endif$
 </table>
 >>
 
