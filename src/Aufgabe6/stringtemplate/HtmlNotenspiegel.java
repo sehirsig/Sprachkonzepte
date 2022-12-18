@@ -11,7 +11,7 @@ public final class HtmlNotenspiegel {
             new Fachnote("Sprachkonzepte Uebungen", true)
         };
 
-        ST templ = new STGroupFile(args[0]).getInstanceOf("notenspiegel");
+        ST templ = new STGroupFile("Aufgabe6/stringtemplate/htmlnotenspiegel.stg").getInstanceOf("notenspiegel");
         templ.add("n", fachnoten);
         String result = templ.render();
         System.out.println(result);

@@ -16,6 +16,7 @@ public final class Procedural {
     private static final int MIN_LENGTH = 20;
 
     public static void main(String[] args) throws IOException {
+        //$FileDir$/input.txt
         var input = Files.newBufferedReader(Paths.get(args[0]));
         var lines = new LinkedList<String>();
 

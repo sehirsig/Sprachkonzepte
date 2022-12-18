@@ -1,0 +1,55 @@
+// aufgabe6.stg
+delimiters "$", "$"
+
+aufgabe6(n) ::= <<
+<!DOCTYPE html>
+<html lang="de">
+<body>
+<h1>AUFGABE7 SPRACHKONZEPTE</h1>
+$n:javaApis(); separator="\n"$
+</body>
+</html>
+>>
+
+javaApis(f) ::= <<
+<h2>$f.className$</h2>
+<table>
+$if(f.isClass)$f:tableClass()$else$f:tableInterface()$endif$
+</table>
+>>
+
+tableClass(k) ::= <<
+<tr>
+    <th>Interface</th>
+    <th>Methods</th>
+</tr>
+<tr>
+$k:interfaceClass(); separator="\n"$
+</tr>
+>>
+
+interfaceClass(t) ::= <<
+<td valign=top>$t.interfaceName$</td>
+<td>
+$t.methods:met(); separator="\n"$
+</td>
+>>
+
+tableInterface(k) ::= <<
+<tr>
+    <th>Methods</th>
+</tr>
+<tr>
+$k:interfaceInterface(); separator="\n"$
+</tr>
+>>
+
+interfaceInterface(t) ::= <<
+<td>
+$t.methods:met(); separator="\n"$
+</td>
+>>
+
+met(m)::= <<
+$m$
+>>
