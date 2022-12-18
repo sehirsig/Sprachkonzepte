@@ -4,6 +4,7 @@ import org.stringtemplate.v4.ST;
 import org.stringtemplate.v4.STGroupFile;
 
 import java.lang.reflect.Method;
+import java.sql.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -47,7 +48,6 @@ final class JavaApi {
 
     public ArrayList<interfaces> interfaces;
 
-    public Map<String, ArrayList<String>> interfaceMap = new HashMap<>();
 
     public JavaApi(String apiName) {
         try {
@@ -58,9 +58,13 @@ final class JavaApi {
 
             if (isClass) {
                 for (var i : this.ourClass.getInterfaces()) {
-
+                    ArrayList<String> methods = new ArrayList<>();
                     for (var m : i.getMethods()) {
-                        methods.add(m.getName());
+                        String buildParameter = "";
+                        for (var t :  m.getParameterTypes()) {
+                            buildParameter = buildParameter + ", " + t.getName();
+                        }
+                        methods.add(m.getReturnType().getName() + " " + m.getName() + "(" + buildParameter.replaceFirst(", ", "") + ")");
                     }
                     interfaces.add(new interfaces(i.getName(), methods));
                 }
@@ -74,7 +78,7 @@ final class JavaApi {
                     }
                     methods.add(m.getReturnType().getName() + " " + m.getName() + "(" + buildParameter.replaceFirst(", ", "") + ")");
                 }
-                interfaceMap.put(ourClass.getName(), methods);
+                interfaces.add(new interfaces(ourClass.getName(), methods));
             }
         } catch (ClassNotFoundException e) {
             e.printStackTrace();

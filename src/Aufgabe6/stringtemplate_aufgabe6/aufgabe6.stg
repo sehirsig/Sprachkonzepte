@@ -19,7 +19,7 @@ $n:javaApis(); separator="\n<br>\n"$
 >>
 
 javaApis(f) ::= <<
-<h2>$f.className$</h2>
+<h2>$f.className$:</h2>
 <table>
 $if(f.isClass)$$f:tableClass()$$else$$f:tableInterface()$$endif$
 </table>
@@ -44,7 +44,7 @@ tableInterface(k) ::= <<
 
 interfaceInterface(t) ::= <<
 <td>
-$t.methods:met(); separator="\n"$
+$t.imethods:met(); separator="<br>\n"$
 </td>
 >>
 
