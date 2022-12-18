@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<style type="text/css">
+th, td { border-bottom: thin solid; padding: 4px; text-align: left; }
+td { font-family: monospace }
+</style>
+</head>
+<body>
+<h1>Sprachkonzepte, Aufgabe 7</h1>
+<h2>class java.lang.String:</h2>
+<table>
+<tr><th>Interface</th><th>Methods</th></tr>
+<tr>
+<td valign=top>java.io.Serializable</td>
+<td></td>
+</tr>
+<tr>
+<td valign=top>java.lang.Comparable</td>
+<td>int compareTo(java.lang.Object)</td>
+</tr>
+<tr>
+<td valign=top>java.lang.CharSequence</td>
+<td>int length()<br>
+java.lang.String toString()<br>
+char charAt(int)<br>
+int compare(java.lang.CharSequence, java.lang.CharSequence)<br>
+java.util.stream.IntStream codePoints()<br>
+java.lang.CharSequence subSequence(int, int)<br>
+java.util.stream.IntStream chars()</td>
+</tr>
+<tr>
+<td valign=top>java.lang.constant.Constable</td>
+<td>java.util.Optional describeConstable()</td>
+</tr>
+<tr>
+<td valign=top>java.lang.constant.ConstantDesc</td>
+<td>java.lang.Object resolveConstantDesc(java.lang.invoke.MethodHandles$Lookup)</td>
+</tr>
+</table>
+<br>
+<h2>interface java.util.Iterator:</h2>
+<table>
+<tr><th>Methods</th></tr>
+<tr><td>void remove()<br>
+void forEachRemaining(java.util.function.Consumer)<br>
+boolean hasNext()<br>
+java.lang.Object next()</td></tr>
+</table>
+<br>
+<h2>class java.time.Month:</h2>
+<table>
+<tr><th>Interface</th><th>Methods</th></tr>
+<tr>
+<td valign=top>java.time.temporal.TemporalAccessor</td>
+<td>int get(java.time.temporal.TemporalField)<br>
+long getLong(java.time.temporal.TemporalField)<br>
+java.lang.Object query(java.time.temporal.TemporalQuery)<br>
+boolean isSupported(java.time.temporal.TemporalField)<br>
+java.time.temporal.ValueRange range(java.time.temporal.TemporalField)</td>
+</tr>
+<tr>
+<td valign=top>java.time.temporal.TemporalAdjuster</td>
+<td>java.time.temporal.Temporal adjustInto(java.time.temporal.Temporal)</td>
+</tr>
+</table>
+<br>
+</body>
+</html>
