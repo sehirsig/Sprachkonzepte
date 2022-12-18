@@ -43,9 +43,7 @@ tableInterface(k) ::= <<
 >>
 
 interfaceInterface(t) ::= <<
-<td>
-$t.imethods:met(); separator="<br>\n"$
-</td>
+<td>$t.imethods:met(); separator="<br>\n"$</td>
 >>
 
 met(m)::= <<
