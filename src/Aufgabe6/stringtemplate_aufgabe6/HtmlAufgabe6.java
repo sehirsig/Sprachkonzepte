@@ -28,12 +28,24 @@ public class HtmlAufgabe6 {
     }
 }
 
+final class interfaces {
+    public String interfaceName;
+    public ArrayList<String> imethods;
+
+    public interfaces(String interfaceName, ArrayList<String> imethods) {
+        this.interfaceName = interfaceName;
+        this.imethods = imethods;
+    }
+}
+
 
 final class JavaApi {
     public boolean isClass;
     public Class<?> ourClass;
 
     public String className;
+
+    public ArrayList<interfaces> interfaces;
 
     public Map<String, ArrayList<String>> interfaceMap = new HashMap<>();
 
@@ -42,7 +54,7 @@ final class JavaApi {
             this.ourClass = Class.forName(apiName);
             this.className = this.ourClass.toString();
             this.isClass = !this.ourClass.toString().contains("interface");
-            ArrayList<String> methods = new ArrayList<>();
+            this.interfaces = new ArrayList<>();
 
             if (isClass) {
                 for (var i : this.ourClass.getInterfaces()) {
@@ -50,16 +62,20 @@ final class JavaApi {
                     for (var m : i.getMethods()) {
                         methods.add(m.getName());
                     }
-                    interfaceMap.put(i.getName(), methods);
+                    interfaces.add(new interfaces(i.getName(), methods));
                 }
 
             } else {
+                ArrayList<String> methods = new ArrayList<>();
                 for (var m : ourClass.getMethods()) {
-                    methods.add(m.getName());
+                    String buildParameter = "";
+                    for (var t :  m.getParameterTypes()) {
+                        buildParameter = buildParameter + ", " + t.getName();
+                    }
+                    methods.add(m.getReturnType().getName() + " " + m.getName() + "(" + buildParameter.replaceFirst(", ", "") + ")");
                 }
                 interfaceMap.put(ourClass.getName(), methods);
             }
-
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }

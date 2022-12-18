@@ -4,6 +4,12 @@ delimiters "$", "$"
 aufgabe6(n) ::= <<
 <!DOCTYPE html>
 <html lang="de">
+<head>
+<style type="text/css">
+th, td { border-bottom: thin solid; padding: 4px; text-align: left; }
+td { font-family: monospace }
+</style>
+</head>
 <body>
 <h1>AUFGABE7 SPRACHKONZEPTE</h1>
 $n:javaApis(); separator="\n"$
@@ -19,29 +25,20 @@ $if(f.isClass)$$f:tableClass()$$else$$f:tableInterface()$$endif$
 >>
 
 tableClass(k) ::= <<
-<tr>
-    <th>Interface</th>
-    <th>Methods</th>
-</tr>
-<tr>
-$k:interfaceClass(); separator="\n"$
-</tr>
+<tr><th>Interface</th><th>Methods</th></tr>
+$k.interfaces:interfaceClass(); separator="\n"$
 >>
 
 interfaceClass(t) ::= <<
+<tr>
 <td valign=top>$t.interfaceName$</td>
-<td>
-$t.methods:met(); separator="\n"$
-</td>
+<td>$t.imethods:met(); separator="<br>\n"$</td>
+</tr>
 >>
 
 tableInterface(k) ::= <<
-<tr>
-    <th>Methods</th>
-</tr>
-<tr>
-$k:interfaceInterface(); separator="\n"$
-</tr>
+<tr><th>Methods</th></tr>
+<tr>$k.interfaces:interfaceInterface(); separator="\n"$</tr>
 >>
 
 interfaceInterface(t) ::= <<
