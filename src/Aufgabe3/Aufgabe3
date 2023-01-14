@@ -1,0 +1,12 @@
+Aufgabe 3a)
+
+Sie haben in Aufgabe 2 eine kleine Sprache mit konkreter und abstrakter Syntax definiert.
+Lässt sich eine statische Semantik für Ihre abstrakte Syntax angeben?
+Erlaubt Ihre konkrete Syntax Formulierungen, die die statische Semantik verletzen?
+Ergänzen Sie gegebenenfalls eine statische Semantikprüfung für Ihre Sprache.
+
+Falls Ihre eigene Sprache hinsichtlich statischer Sematik nichts hergibt, laden Sie die ANTLR4 Java Grammatik herunter und schreiben Sie mit Hilfe der generierten Listener-Klasse eine statische Semantikprüfung, die sicherstellt, dass ganzzahlige Literale ohne L im Zahlbereich von int und mit L im Zahlbereich von long liegen.
+
+Aufgabe 3b)
+
+Programmieren Sie für Ihre eigene Sprache aus Aufgabe 2 mindestens eine dynamische Semantik.

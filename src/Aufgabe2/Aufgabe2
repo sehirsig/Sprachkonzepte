@@ -1,0 +1,8 @@
+Aufgabe 2a)
+
+Denken Sie sich eine kleine Sprache aus. Definieren Sie deren Vokabular mit einer ANTLR4 lexer grammar und deren Grammatik mit einer ANTLR4 parser grammar. Erzeugen Sie für einige Beispieltexte mit Hilfe von org.antlr.v4.gui.TestRig den Ableitungsbaum (Parse Tree).
+
+Aufgabe 2b)
+
+Definieren Sie mit Java-Klassen die abstrakte Syntax Ihrer Sprache aus a) und
+schreiben Sie ein Java-Programm, das den ANTLR4 Parse Tree in einen AST überführt.

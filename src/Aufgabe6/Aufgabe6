@@ -1,0 +1,6 @@
+Aufgabe 6
+Implementieren Sie eine Java-Anwendung, die für beliebige Java-Klassen und -Interfaces eine HTML-Seite im Format der Beispieldatei aufgabe6.html (siehe Moodle-Kursseite) generiert. Leiten Sie dazu aus aufgabe6.html eine Stringtemplategroup-Datei aufgabe6.stg ab. Die Java-Anwendung soll die gewünschten voll qualifizierten Klassen- und Interfacenamen als Aufrufparameter bekommen und mit Hilfe der Templates die HTML-Darstellung erzeugen.
+
+Hinweise:
+Übergeben Sie dem Wurzel-Template eine Collection oder ein Array von Class<?>-Objekten. Die Objekte erzeugen Sie mit Class.forName(String).
+Die Stringtemplate-Bibliothek ist in der Antlr-Bibliothek enthalten, die Sie bei vorhergehenden Aufgaben bereits verwendet haben.

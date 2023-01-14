@@ -1,0 +1,22 @@
+Aufgabe 5 a)
+Lösen Sie die Aufgaben von Folie 25 (rechte Spalte der Tabelle), 26 (Berechnung Fakultät) und 28 (Anfragen letzter Spiegelpunkt) aus Eck-Prolog.pdf.
+
+Aufgabe 5 b)
+Programmieren Sie ein Prädikat sum, das die Summe einer Liste von Zahlen berechnet.
+Hinweis: Sie müssen Rekursion verwenden.
+
+Aufgabe 5 c)
+Sie wollen zu einer Werksbesichtigung von BioNTech in Mainz reisen. Dazu brauchen Sie eine Bahnverbindung. Gegeben sind die folgenden Fakten:
+    zug(konstanz, 08.39, offenburg, 10.59).
+    zug(konstanz, 08.39, karlsruhe, 11.49).
+    zug(konstanz, 08.53, singen, 09.26).
+    zug(singen, 09.37, stuttgart, 11.32).
+    zug(offenburg, 11.29, mannheim, 12.24).
+    zug(karlsruhe, 12.06, mainz, 13.47).
+    zug(stuttgart, 11.51, mannheim, 12.28).
+    zug(mannheim, 12.39, mainz, 13.18).
+
+Definieren Sie ein Prädikat verbindung, das beschreibt, ob zwischen zwei Städten nach einer gegebenen Abfahrtszeit eine Verbindung inklusive Umsteigen existiert.
+Hinweise: Sie brauchen auch hier Rekursion. Beim Umsteigen muss Abfahrtszeit > Ankunftszeit gelten.
+
+Ein Abfrage verbindung(konstanz, 8.00, mainz, Reiseplan) soll nacheinander die möglichen Reiseverbindungen nach 8 Uhr in der Listenvariablen Reiseplan liefern.

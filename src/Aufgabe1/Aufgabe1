@@ -1,0 +1,21 @@
+Aufgabe 1 a)
+Schreiben Sie ein Java-Programm, das in einem String Formatspezifikationen gemäß java.util.Formatter findet. Erstellen Sie dazu mit der Syntax von java.util.regex.Pattern einen regulären Ausdruck für eine solche Formatspezifikation. Sie brauchen darin nicht zu berücksichtigen, dass bestimmte Angaben innerhalb einer Formatspezifikation nur bei bestimmten Konversionen erlaubt sind. Achten Sie aber bei argument_index, width und precision darauf, ob der Zahlbereich bei 0 oder 1 beginnt.
+
+Beispieleingaben:
+xxx %d yyy%n
+xxx%1$d yyy
+%1$-02.3dyyy
+Wochentag: %tA Uhrzeit: %tT
+
+Beispielausgaben:
+TEXT("xxx ")FORMAT("%d")TEXT(" yyy")FORMAT("%n")
+TEXT("xxx")FORMAT("%1$d")TEXT(" yyy")
+FORMAT("%1$-02.3d")TEXT("yyy")
+TEXT("Wochentag:")FORMAT("%tA")TEXT("Uhrzeit:")FORMAT("%tT")
+Hinweis:
+Die Formatspezifikationen kennen Sie von String.format() und System.out.printf().
+TEXT ist einfach eine Zeichenfolge, die zwischen erkannten Formatspezifikationen steht.
+
+
+Aufgabe 1 b)
+Erkennen Sie mit ANTLR 4 Lexer-Regeln Zeitangaben im digitalen 12-Sunden-Format gemäß https://en.wikipedia.org/wiki/12-hour_clock. Beachten Sie auch die alternativen Schreibweisen 12 midnight und 12 noon. Testen Sie mit org.antlr.v4.gui.TestRig.
