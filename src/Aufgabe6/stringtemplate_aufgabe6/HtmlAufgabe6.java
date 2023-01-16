@@ -15,8 +15,9 @@ public class HtmlAufgabe6 {
 
     public static void main(String[] args) throws Exception {
 
+        String[] classes = new String[] {"java.lang.String", "java.util.Iterator", "java.time.Month"};
         LinkedList<JavaApi> javaApis = new LinkedList<>();
-        for (String e : args) {
+        for (String e : classes) {
             javaApis.add(new JavaApi(e));
         }
 
